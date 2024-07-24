@@ -69,7 +69,7 @@ def FIO_cases(fio:str, passport: str) -> dict:
 
 
 morph = pymorphy2.MorphAnalyzer()
-# Просклонять текст в дательном падеже.  gramems - граммемы(род/число/падеж/...) - см доку 
+# Просклонять текст в заданном падеже.  gramems - граммемы(род/число/падеж/...) - см доку 
 def text_case(text:str, gramems={'datv'}): 
     ans = []
     for word in text.split():
@@ -81,7 +81,7 @@ def text_case(text:str, gramems={'datv'}):
 
     return ' '.join(ans).strip()
 
-# Просклонять название орг-ии во все возможные формы
+# Просклонять название орг-ии во все возможные падежи
 def developer_cases(developer_name:str):    
     # Возвращаем индекс - начало несклоняемой части (иногда часть текста не склоняется) 
     def fix_collisions(developer_name):
